@@ -16,10 +16,10 @@ A home wi-fi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  me
  
 ### Screenshots
 These are the pages shown by the MyThermostat python3 programs:
-- mutipage.py
+- MutiPage.py
 - Setting.py
 
 [![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Raspberry/MyThermostat.PNG)](https://github.com/guido57/MyThermostat/blob/master/Raspberry/MyThermostat.PNG)
 
 
-### Logic Diagram - Fig.1
+### Logic Diagram 
