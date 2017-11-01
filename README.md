@@ -1,13 +1,15 @@
 # MyThermostat
-A home wi-fi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  measuring the room temperature wireless.  
+A home wi-fi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  measuring the room temperature and sending it to Raspberry via WiFI.  
 
 ### Overview
-This app dispatches received SMS to other phone numbers.
 
-### Options
-- choose one or more SMS senders
-- filter the received SMS text content
-- choose one or more SMS recipients
+### Autostart the Python3 program on Raspbian
+1. Place thermostat folder into /home/pi
+1. Add this line to ~/.config/lxsession/LXDE/autostart file
+```
+...
+@sh /home/pi/thermostat/start.sh
+```
 
 ### Highlights
  - silently started on boot
