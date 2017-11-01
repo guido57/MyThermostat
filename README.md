@@ -1,7 +1,9 @@
 # MyThermostat
-A home wi-fi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  measuring the room temperature and sending it to Raspberry via WiFI.  
+A home wifi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  measuring the room temperature and sending it to Raspberry via wifi.  
 
 ### Overview
+
+
 
 ### Autostart the Python3 program on Raspbian
 1. Place thermostat folder into /home/pi
