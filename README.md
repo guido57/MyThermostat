@@ -25,8 +25,7 @@ These are the pages shown by the MyThermostat python3 programs:
 
 
 ### Logic Diagram 
-
-
+[![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram.PNG)](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram.PNG)
 
 ### 220V relay connection to Raspberry PI 
 See these lines ofo code inside MultiPage.py
