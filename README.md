@@ -25,3 +25,16 @@ These are the pages shown by the MyThermostat python3 programs:
 
 
 ### Logic Diagram 
+
+
+
+### 220V relay connection to Raspberry PI 
+
+```
+ # set pin 40 as output to command the 220V relay
+ RELAY_PIN = 40
+ import RPi.GPIO as GPIO
+ GPIO.setmode(GPIO.BOARD)
+ GPIO.setup(RELAY_PIN,GPIO.OUT)
+ GPIO.output(RELAY_PIN,GPIO.HIGH)
+```            
