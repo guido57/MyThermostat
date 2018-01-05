@@ -25,7 +25,7 @@ These are the pages shown by the MyThermostat python3 programs:
 
 
 ### Logic Diagram 
-[![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic.PNG)](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic.PNG)
+[![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic%20v1.PNG)](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic%20v1.PNG)
 
 ### 220V relay connection to Raspberry PI Schematic
 See these lines of code inside MultiPage.py
