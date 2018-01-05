@@ -28,11 +28,11 @@ These are the pages shown by the MyThermostat python3 programs:
 [![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic.PNG)](https://github.com/guido57/MyThermostat/blob/master/Logic%20Diagram%20And%20Schematic.PNG)
 
 ### 220V relay connection to Raspberry PI Schematic
-See these lines ofo code inside MultiPage.py
+See these lines of code inside MultiPage.py
 ```
  # set pin 40 as output to command the 220V relay
  RELAY_PIN = 40
- 
+ ...
  import RPi.GPIO as GPIO
  GPIO.setmode(GPIO.BOARD)
  GPIO.setup(RELAY_PIN,GPIO.OUT)
