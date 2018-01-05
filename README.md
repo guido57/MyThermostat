@@ -29,10 +29,11 @@ These are the pages shown by the MyThermostat python3 programs:
 
 
 ### 220V relay connection to Raspberry PI 
-
+See these lines ofo code inside MultiPage.py
 ```
  # set pin 40 as output to command the 220V relay
  RELAY_PIN = 40
+ 
  import RPi.GPIO as GPIO
  GPIO.setmode(GPIO.BOARD)
  GPIO.setup(RELAY_PIN,GPIO.OUT)
