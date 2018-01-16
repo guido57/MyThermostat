@@ -10,7 +10,9 @@ The thermostat has the following states:
 - Off. The relay is always off 
 [![](https://github.com/guido57/MyThermostat/blob/master/off.PNG)](https://github.com/guido57/MyThermostat/blob/master/off.PNG)
 - Manual. The relay is on if the room temperature is below the set temperature
+[![](https://github.com/guido57/MyThermostat/blob/master/manual.PNG)](https://github.com/guido57/MyThermostat/blob/master/manual.PNG)
 - Thermostat. The relay is on if the room temperature is below the set temperature at that time range.
+[![](https://github.com/guido57/MyThermostat/blob/master/thermostat.PNG)](https://github.com/guido57/MyThermostat/blob/master/thermostat.PNG)
 
 See the logic diagram below also.
 
