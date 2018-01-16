@@ -3,7 +3,15 @@ A home wifi thermostat with a Raspberry PI-3 with LCD screen and an ESP8266  mea
 
 ### Overview
 
-
+### Prepare your Raspberry
+0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
+1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
+2. Install "Raspian Jessie with Desktop" or "Raspbian Stretch with Desktop", I tested:
+   - Stretch "2017-11-29-raspbian-stretch.img" downloaded from [Download Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)
+   - Jessie "2017-04-10-raspbian-jessie.img"
+   - Jessie "2016-11-25-raspbian-jessie.img"
+3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. [
+Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 ### Autostart the Python3 program on Raspbian
 1. Place thermostat folder into /home/pi
