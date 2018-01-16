@@ -15,11 +15,26 @@ Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/vi
 
 ### Autostart the Python3 program on Raspbian
 1. Place thermostat folder into /home/pi
-1. Add this line to ~/.config/lxsession/LXDE/autostart file
+2. Add this line to ~/.config/lxsession/LXDE/autostart file
 ```
 ...
 @sh /home/pi/thermostat/start.sh
 ```
+### Install a TFT 3.5" Touchscreen
+1. I used a [Elegoo 3.5 Inch 480x320 TFT LCD Display Touch Screen Monitor](https://www.amazon.it/gp/product/B01N2N86HB/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) 
+2. Install the software inputting these commands one by one: 
+ 
+```
+sudo apt-mark hold raspberrypi-bootloader 
+sudo apt-get update 
+sudo apt-get upgrade  
+git clone https://github.com/goodtft/LCD-show.git  
+chmod - R 755 LCD-show  
+cd LCD-show/  
+sudo ./LCD35-show 
+```
+3. Calibrate the screen
+
 
 ### Highlights
  
