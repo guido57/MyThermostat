@@ -8,7 +8,7 @@ Every 45 seconds the ESP8266 sends the room temperature to the Raspberry via wif
 The thermostat SW running on the Raspberry PI compare the received temperature and consequently turn on or off the relay.
 The thermostat has the following states:
 - Off. The relay is always off 
-[![N|Solid](https://github.com/guido57/MyThermostat/blob/master/Raspberry/off.PNG)](https://github.com/guido57/MyThermostat/blob/master/Raspberry/off.PNG)
+[![](https://github.com/guido57/MyThermostat/blob/master/off.PNG)](https://github.com/guido57/MyThermostat/blob/master/off.PNG)
 - Manual. The relay is on if the room temperature is below the set temperature
 - Thermostat. The relay is on if the room temperature is below the set temperature at that time range.
 
