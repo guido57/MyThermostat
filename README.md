@@ -4,7 +4,7 @@ A home wifi thermostat with a Raspberry PI-3 with TFT screen and an ESP8266  mea
 ### Overview
 The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
 The room temperature is measured by a sensor connnected to a NodeMCU ESP8266. 
-Every 45 seconds the ESP8266 sends the room temperature to the Raspberry via wifi.
+Every 30 seconds the ESP8266 sends the room temperature to the Raspberry via wifi.
 The thermostat SW running on the Raspberry PI compare the received temperature and consequently turn on or off the relay.
 The thermostat has the following states:
 - Off. The relay is always off 
