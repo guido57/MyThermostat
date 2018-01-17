@@ -260,7 +260,7 @@ class MainPage(Frame):
             timeStyle.configure("Time.TLabel", font = ('Helvetica','15','bold'))
             TimeLbl = Label(self, text=_text, style="Time.TLabel")
             TimeLbl.grid(row=_row,column=_col)
-            return TimeLbl
+            return TimeLbl 
 
         ''' SepLbl - First Row '''
         sepStyle = Style ()
