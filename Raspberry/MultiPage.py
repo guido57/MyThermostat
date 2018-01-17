@@ -3,11 +3,11 @@
 
 import os
 
-if os.name == 'posix':
-    # on raspberry
-    print("ptvsd.enable_attach('my_secret')")
-    import ptvsd
-    ptvsd.enable_attach('my_secret')
+# if os.name == 'posix':
+#    # on raspberry
+#    print("ptvsd.enable_attach('my_secret')")
+#    import ptvsd
+#    ptvsd.enable_attach('my_secret')
 
 # import for the GUI
 from tkinter import Tk, Button, PhotoImage, messagebox
