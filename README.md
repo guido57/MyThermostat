@@ -29,7 +29,7 @@ See the logic diagram below also.
 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. [
 Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 4. Install the python PIL module with the command
-...
+```
 pip3 pillow
 ```
 
@@ -73,6 +73,7 @@ These are the pages shown by the MyThermostat python3 programs:
 
 ### 220V relay connection to Raspberry PI Schematic
 See these lines of code inside MultiPage.py
+
 ```
  # set pin 40 as output to command the 220V relay
  RELAY_PIN = 40
