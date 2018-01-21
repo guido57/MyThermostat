@@ -35,7 +35,7 @@ pip3 pillow
 
 ### Autostart the Python3 program on Raspbian
 1. Place thermostat folder into /home/pi
-2. Add this line to ~/.config/lxsession/LXDE/autostart file
+2. Add this line to ~/.config/lxsession/LXDE-pi/autostart file
 ```
 ...
 @sh /home/pi/thermostat/start.sh
