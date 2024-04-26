@@ -28,9 +28,10 @@ See the logic diagram below also.
    - Jessie "2016-11-25-raspbian-jessie.img"
 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. [
 Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
-4. Install the python PIL module with the command
+4. Install the python PIL module with the command. In newest Raspberry PI OS it should be there already.
+   
 ```
-pip3 pillow
+pip3 install pillow
 ```
 
 ### Autostart the Python3 program on Raspbian
