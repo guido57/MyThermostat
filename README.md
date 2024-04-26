@@ -50,7 +50,7 @@ sudo apt-mark hold raspberrypi-bootloader
 sudo apt-get update 
 sudo apt-get upgrade  
 git clone https://github.com/goodtft/LCD-show.git  
-chmod - R 755 LCD-show  
+chmod -R 755 LCD-show  
 cd LCD-show/  
 sudo ./LCD35-show 
 ```
