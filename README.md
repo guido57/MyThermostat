@@ -1,10 +1,10 @@
 # MyThermostat
-A home wifi thermostat with a Raspberry PI-3 with TFT screen and an ESP8266  measuring the room temperature and sending it to Raspberry via wifi.  
+A home wifi thermostat with a Raspberry PI-3 with TFT screen and an ESP32 measuring the room temperature and sending it to Raspberry via wifi.  
 
 ### Overview
 The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
-The room temperature is measured by a sensor connnected to a NodeMCU ESP8266. 
-Every 30 seconds the ESP8266 sends the room temperature to the Raspberry via wifi.
+The room temperature is measured by a sensor connnected to an ESP32. 
+Every 30 seconds the ESP32 sends the room temperature to the Raspberry via wifi.
 The thermostat SW running on the Raspberry PI compare the received temperature and consequently turn on or off the relay.
 The thermostat has the following states:
 - Off. The relay is always off
