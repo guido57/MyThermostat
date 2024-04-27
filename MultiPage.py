@@ -3,11 +3,6 @@
 
 import os
 
-# if os.name == 'posix':
-#    # on raspberry
-#    print("ptvsd.enable_attach('my_secret')")
-#    import ptvsd
-#    ptvsd.enable_attach('my_secret')
 
 # import for the GUI
 from tkinter import Tk, Button, PhotoImage, messagebox
@@ -260,7 +255,7 @@ class MainPage(Frame):
             timeStyle.configure("Time.TLabel", font = ('Helvetica','15','bold'))
             TimeLbl = Label(self, text=_text, style="Time.TLabel")
             TimeLbl.grid(row=_row,column=_col)
-            return TimeLbl 
+            return TimeLbl
 
         ''' SepLbl - First Row '''
         sepStyle = Style ()
@@ -284,11 +279,40 @@ class MainPage(Frame):
         FunctLbl["text"] = OffBtn["text"]
         FunctLbl.grid(row=1, column=2, columnspan=2) 
 
+        ''' TempLbl '''
         tempStyle = Style ()
         tempStyle.configure("Temp.TLabel", font = ('Helvetica','40','bold'), foreground="red")
         TempLbl = Label(self, text="20.0°", style="Temp.TLabel")
         TempLbl.grid(row=2,column=2,columnspan=2) 
         self.Temp = TempLbl # to be used by read_sensor
+
+        ''' ExtTempLbl '''
+        extTempStyle = Style ()
+        extTempStyle.configure("ExtTemp.TLabel", font = ('Helvetica','20','bold'), foreground="red")
+        ExtTempLbl = Label(self, text="20.0°", style="ExtTemp.TLabel")
+        ExtTempLbl.grid(row=2,column=1,columnspan=1) 
+        self.ExtTemp = ExtTempLbl # to be used by read_sensor
+
+        ''' ExtHumidityLbl '''
+        extHumidityStyle = Style ()
+        extHumidityStyle.configure("ExtHumidity.TLabel", font = ('Helvetica','20','bold'), foreground="red")
+        ExtHumidityLbl = Label(self, text="0%", style="ExtTemp.TLabel")
+        ExtHumidityLbl.grid(row=3,column=1,columnspan=1) 
+        self.ExtHumidity = ExtHumidityLbl # to be used by read_sensor
+
+        ''' VoltageLbl '''
+        VoltageStyle = Style ()
+        VoltageStyle.configure("Voltage.TLabel", font = ('Helvetica','10','bold'), foreground="black")
+        VoltageLbl = Label(self, text="3.3V", style="Voltage.TLabel")
+        VoltageLbl.grid(row=4,column=0,columnspan=1) 
+        self.Voltage = VoltageLbl # to be used by read_sensor
+
+        ''' ExtTimeLbl '''
+        ExtTimeStyle = Style ()
+        ExtTimeStyle.configure("ExtTime.TLabel", font = ('Helvetica','15','bold'), foreground="black")
+        ExtTimeLbl = Label(self, text="20:11:18", style="ExtTime.TLabel")
+        ExtTimeLbl.grid(row=4,column=1,columnspan=1) 
+        self.ExtTime = ExtTimeLbl # to be used by read_sensor
 
         ''' Flame '''
         flameImg = PhotoImage(file="flame.gif")
@@ -440,9 +464,19 @@ class MainPage(Frame):
     def read_sensor(self):
         try:
             # self.lbl["text"] = self.queue.get_nowait()
-            str = self.queue.get_nowait()
-            self.Temp["text"] = str + "°"
-            self.last_temp_reading = time.time()
+            request_str = self.queue.get_nowait()
+            jsonobj = json.loads(request_str)
+            if "voltage" in jsonobj:
+                # it is the external temperature sensor
+                self.Voltage["text"] = jsonobj["voltage"] + "V"
+                self.ExtTemp["text"] = jsonobj["temp"] + "°"
+                self.ExtTime["text"] = time.strftime("%H:%M:%S");   
+                if "humidity" in jsonobj:
+                    self.ExtHumidity["text"] = jsonobj["humidity"] + "%"
+            else:
+                str_temp = jsonobj["temp"] 
+                self.Temp["text"] = str_temp + "°"
+                self.last_temp_reading = time.time()
         except Empty:
             str= ""
             pass
@@ -462,18 +496,18 @@ class RequestHandler(BaseHTTPRequestHandler):
         request_bytes = self.rfile.read(length)
         request_str = request_bytes.decode("utf-8") 
         try:
-            jsonobj = json.loads(request_str)
-            str_temp = jsonobj["temp"] # get item "temp" which is the temperature as string formatted like 20.3
-            self.server.queue.put(str_temp)
+            #jsonobj = json.loads(request_str)
+            #str_temp = jsonobj["temp"] # get item "temp" which is the temperature as string formatted like 20.3
+            self.server.queue.put(request_str)
         except ee:
             pass
 
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        wfile_str = "<html><body><h1>POST " +request_str + "</h1></body></html>"
-        wfile_encoded = wfile_str.encode()
-        self.wfile.write(wfile_encoded)
+      #   wfile_str = "<html><body><h1>POST " +request_str + "</h1></body></html>"
+      #   wfile_encoded = wfile_str.encode()
+      #   self.wfile.write(wfile_encoded)
       #  self.wfile.write("<html><body><h1>POST " + "</h1></body></html>")
 
     """Respond to a GET request."""
