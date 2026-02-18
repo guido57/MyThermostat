@@ -3,9 +3,9 @@ A home wifi thermostat with a Raspberry PI-3 with TFT screen and an ESP32 measur
 
 ### Overview
 The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
-The room temperature is measured by a sensor connnected to an ESP32. 
-Every 30 seconds the ESP32 sends the room temperature to the Raspberry via wifi.
-The thermostat SW running on the Raspberry PI compare the received temperature and consequently turn on or off the relay.
+The room temperature is measured by a sensor connnected to Home Assistant. 
+The thermostat SW running on the Raspberry PI reads sensor.temperature_sensor from Home Assistant.
+Then it compares the received temperature and consequently turn on or off the relay.
 The thermostat has the following states:
 - Off. The relay is always off
 
@@ -22,14 +22,10 @@ See the logic diagram below also.
 ### Prepare your Raspberry
 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-2. Install "Raspian Jessie with Desktop" or "Raspbian Stretch with Desktop", I tested:
-   - Stretch "2017-11-29-raspbian-stretch.img" downloaded and with "installation guide" at [Download Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)
-   - Jessie "2017-04-10-raspbian-jessie.img"
-   - Jessie "2016-11-25-raspbian-jessie.img"
-3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. [
-Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
-4. Install the python PIL module with the command. In newest Raspberry PI OS it should be there already.
-   
+2. Download and install Raspberry PI OS Bullseye
+
+when installed, activate WiFi, VNC and SSH then:   
+
 ```
 pip3 install pillow
 ```
