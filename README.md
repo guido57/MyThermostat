@@ -1,5 +1,5 @@
 # MyThermostat
-A home wifi thermostat with a Raspberry PI-3 with TFT screen and an ESP32 measuring the room temperature and sending it to Raspberry via wifi.  
+A home wifi thermostat with a Raspberry PI-3 with TFT screen reading the room temperature from Home Assistant.  
 
 ### Overview
 The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
