@@ -14,9 +14,30 @@ from socketserver import ThreadingMixIn
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from Settings import Settings
 from AnimatedGIF import AnimatedGIF
+import requests
+import time
+
+HA_URL = "http://192.168.1.224:8123/api/states/sensor.esphome_web_d78c34_temperature_sensor"
+TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwNDdhNGIwNDliODg0OTYwOWY1NGI3OWNkZjE5MGM3ZSIsImlhdCI6MTc3MTMyMjM2MiwiZXhwIjoyMDg2NjgyMzYyfQ.G5caKEVIA9_xkVKmSdyZlkMs_mP-Sji66lRWrF9p-FY"
+
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 RELAY_PIN = 40
+
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+session = requests.Session()
+
+retry = Retry(
+    total=3,
+    backoff_factor=1,
+    status_forcelist=[500, 502, 503, 504],
+)
+
+adapter = HTTPAdapter(max_retries=retry)
+session.mount("http://", adapter)
+
 
 class SampleApp(Tk):
 
@@ -360,14 +381,14 @@ class MainPage(Frame):
         DnTempBtn.grid(row=3, column=5) 
         DnTempBtn.image = photo2
 
-        ''' SetTempLbl '''	
+        ''' SetTempLbl '''  
         SetTempStyle = Style ()
         SetTempStyle.configure("SetTemp.TLabel", font = ('Helvetica','20','bold'), foreground="blue")
         SetTempLbl = Label(self, text="22.0°", style="SetTemp.TLabel")
         SetTempLbl.grid(row=2,column=5) 
         self.SetTemp = SetTempLbl
         
-        ''' SepLbl '''	
+        ''' SepLbl '''  
         SetTempStyle = Style ()
         SetTempStyle.configure("SetTemp.TLabel", font = ('Helvetica','20','bold'), foreground="blue")
         SepRowLbl = Label(self, text="  ", style="SetTemp.TLabel")
@@ -458,10 +479,43 @@ class MainPage(Frame):
         self.display_time_count = self.display_time_count + 1
 
         self.Temp.after(1000, self.display_time) # read every 1000 msecs
-        
 
-   
+
+    
+    def read_sensor_from_ha(self):
+        headers = {
+        "Authorization": f"Bearer {TOKEN}",
+        "Content-Type": "application/json"
+        }
+
+        try:
+            r = session.get(HA_URL, headers=headers, timeout=(3, 10))
+            r.raise_for_status()
+            data = r.json()
+            state = data.get("state")
+            try:
+                return float(state)
+            except (TypeError, ValueError):
+                print("Invalid temperature value:", state)
+                return None
+            
+        except requests.exceptions.RequestException as e:
+            print("Errore lettura sensore:", e)
+            return None
+
     def read_sensor(self):
+        try:
+            temp = self.read_sensor_from_ha()
+            if temp is not None:
+                self.Temp["text"] = f"{temp:.1f}°"
+                self.last_temp_reading = time.time()
+        except Exception as e:
+            print("Sensor loop error:", e)
+
+        self.Temp.after(5000, self.read_sensor)
+
+
+    def read_sensor_old(self):
         try:
             # self.lbl["text"] = self.queue.get_nowait()
             request_str = self.queue.get_nowait()
@@ -480,6 +534,9 @@ class MainPage(Frame):
         except Empty:
             str= ""
             pass
+
+
+
 
         self.Temp.after(500, self.read_sensor) # read every 500 msecs
 

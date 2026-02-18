@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from configparser import SafeConfigParser
+from configparser import ConfigParser
 
 
 class Settings:
 
     def Save(self):
 
-        config = SafeConfigParser()
+        config = ConfigParser()
         config.read('persist.ini')
         try:
             config.add_section('main')
@@ -29,7 +29,7 @@ class Settings:
 
     def Load(self):
 
-        config = SafeConfigParser()
+        config = ConfigParser()
     
         ret = config.read('persist.ini')
         if(ret == []): # the file doesn't exist

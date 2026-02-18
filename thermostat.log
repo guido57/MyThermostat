@@ -173,3 +173,74 @@ Starting server, use <Ctrl-C> to stop
 192.168.1.2 - - [27/Apr/2024 13:56:59] "POST / HTTP/1.1" 200 -
 192.168.1.99 - - [27/Apr/2024 13:58:00] "POST / HTTP/1.1" 200 -
 192.168.1.2 - - [27/Apr/2024 13:58:01] "POST / HTTP/1.1" 200 -
+Starting server, use <Ctrl-C> to stop
+Starting server, use <Ctrl-C> to stop
+Errore lettura sensore: HTTPConnectionPool(host='192.168.1.224', port=8123): Max retries exceeded with url: /api/states/sensor.esphome_web_d78c34_temperature_sensor (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7472ad90>, 'Connection to 192.168.1.224 timed out. (connect timeout=2)'))
+Killed
+Starting server, use <Ctrl-C> to stop
+MultiPage.py:75: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(RELAY_PIN,GPIO.OUT)
+Errore lettura sensore: HTTPConnectionPool(host='192.168.1.224', port=8123): Max retries exceeded with url: /api/states/sensor.esphome_web_d78c34_temperature_sensor (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x746dead0>, 'Connection to 192.168.1.224 timed out. (connect timeout=2)'))
+XIO:  fatal IO error 104 (Connection reset by peer) on X server ":0.0"
+      after 6019 requests (6017 known processed) with 16 events remaining.
+Starting server, use <Ctrl-C> to stop
+Exception ignored in: <function Image.__del__ at 0x7fa4a9f560>
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 4242, in __del__
+    def __del__(self):
+KeyboardInterrupt: 
+Starting server, use <Ctrl-C> to stop
+Traceback (most recent call last):
+  File "/home/pi/thermostat/MultiPage.py", line 589, in <module>
+    app.mainloop()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 1602, in mainloop
+    self.tk.mainloop(n)
+    ~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2066, in __call__
+    def __call__(self, *args):
+    
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1542, in _shutdown
+    _thread_shutdown()
+KeyboardInterrupt: 
+Starting server, use <Ctrl-C> to stop
+Traceback (most recent call last):
+  File "/home/pi/thermostat/MultiPage.py", line 588, in <module>
+    app = SampleApp(server.queue)
+  File "/home/pi/thermostat/MultiPage.py", line 104, in __init__
+    self.frames["MainPage"] = MainPage(parent=container, controller=self, queue=server_queue)
+                              ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/thermostat/MultiPage.py", line 347, in __init__
+    ani_flame_icon = AnimatedGIF(master=self, path = "ani_flame.gif",zoom=2, subsample=5)
+  File "/home/pi/thermostat/AnimatedGIF.py", line 16, in __init__
+    self.load_frames(path=path,subsample=subsample,zoom=zoom)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/thermostat/AnimatedGIF.py", line 35, in load_frames
+    photoframe = PhotoImage(file=path,format=fformat)
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 4290, in __init__
+    Image.__init__(self, 'photo', name, cnf, master, **kw)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 4237, in __init__
+    self.tk.call(('image', 'create', imgtype, name,) + options)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1542, in _shutdown
+    _thread_shutdown()
+KeyboardInterrupt: 
+Starting server, use <Ctrl-C> to stop
+Traceback (most recent call last):
+  File "/home/pi/thermostat/MultiPage.py", line 589, in <module>
+    app.mainloop()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 1602, in mainloop
+    self.tk.mainloop(n)
+    ~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2066, in __call__
+    def __call__(self, *args):
+    
+KeyboardInterrupt
+Starting server, use <Ctrl-C> to stop
+X connection to :0.0 broken (explicit kill or server shutdown).
