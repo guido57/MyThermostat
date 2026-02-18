@@ -53,6 +53,8 @@ sudo ./LCD35-show
 3. Calibrate the screen 
 Optional, but useful. Follow instructions at 3.1 here [ELEGOO 3.5" TFT Touchscreen](https://github.com/guido57/MyThermostat/blob/master/3.5inch%20touch%20screen%20user%20manual%EF%BC%88Arduino-EN%EF%BC%89V1.00.2017.04.14.pdf)
 
+### Shortcut
+
 Alternatively to the steps above, you can download and install the ready made sd card image.
 https://github.com/guido57/MyThermostat/releases/tag/sd_card_image
 
