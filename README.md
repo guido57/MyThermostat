@@ -10,7 +10,7 @@ A home wifi thermostat with a Raspberry PI-3 with TFT screen reading the room te
 
 ### Screenshots 
 
-- The thermostat has the following states:
+The thermostat has the following states:
 
 - Off. The relay is always off
 
