@@ -2,11 +2,12 @@
 A home wifi thermostat with a Raspberry PI-3 with TFT screen reading the room temperature from Home Assistant.  
 
 ### Overview
-The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
-The room temperature is measured by a sensor connnected to Home Assistant. 
-The thermostat SW running on the Raspberry PI reads sensor.temperature_sensor from Home Assistant.
-Then it compares the received temperature and consequently turn on or off the relay.
-The thermostat has the following states:
+
+- The wifi thermostat software runs on a Raspberry with TFT 3.5" Touchscreen.
+- The room temperature is measured by a sensor connnected to Home Assistant. 
+- The thermostat SW running on the Raspberry PI reads sensor.temperature_sensor from Home Assistant.
+- Then it compares the received temperature and consequently turn on or off the relay.
+- The thermostat has the following states:
 - Off. The relay is always off
 
 [![](https://github.com/guido57/MyThermostat/blob/master/off.PNG)](https://github.com/guido57/MyThermostat/blob/master/off.PNG)
